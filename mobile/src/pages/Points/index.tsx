@@ -18,6 +18,7 @@ interface Point {
   id: number;
   name: string;
   image: string;
+  image_url: string;
   latitude: number;
   longitude: number;
 }
@@ -124,7 +125,7 @@ const Points = () => {
                     longitude: point.longitude,
                 }}>
                   <View style={styles.mapMarkerContainer}>
-                    <Image style={styles.mapMarkerImage} source={{uri: 'https://agenciaat.com/wp-content/uploads/2020/02/MRV-9-1024x683.jpg'}} />
+                    <Image style={styles.mapMarkerImage} source={{uri: point.image_url}} />
                     <Text style={styles.mapMarkerTitle}>{point.name}</Text>
                   </View>
                 </Marker>))}
